@@ -273,18 +273,24 @@ p {
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-           <!-- <div class="logo">WIL SERVICE</div> -->
-           <div class="logo"><img src="ma-photo2.png" alt="Logo Wil Service" style="width:70px; height:70px; border-radius:50%; background:white; padding:5px;"></div>
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#apropos">À Propos</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+   <header style="background: linear-gradient(90deg, #ff8c00, #ff6a00); padding: 10px 15px; position: sticky; top: 0; z-index: 100;">
+  <nav style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto;">
+    
+    <!-- LOGO CORRIGÉ -->
+    <div class="logo" style="background: white; width: 60px; height: 60px; min-width: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+      <img src="ma-photo2.png" alt="Logo Wil Service" style="width: 85%; height: 85%; object-fit: contain; border-radius: 50%;">
+    </div>
+
+    <!-- MENU CORRIGÉ TÉLÉPHONE -->
+    <ul style="display: flex; list-style: none; gap: 12px; margin: 0; padding: 0; flex-wrap: wrap; justify-content: flex-end; align-items: center;">
+      <li><a href="#accueil" style="color: white; text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap;">Accueil</a></li>
+      <li><a href="#services" style="color: white; text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap;">Services</a></li>
+      <li><a href="#apropos" style="color: white; text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap;">À Propos</a></li>
+      <li><a href="#contact" style="color: white; text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap;">Contact</a></li>
+    </ul>
+
+  </nav>
+</header>
 
     <section id="accueil" class="hero">
         <h1>WIL SERVICE</h1>
