@@ -1,440 +1,831 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WIL SERVICE - Sérigraphie et Graphisme</title>
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WIL SERVICE - Sérigraphie et Graphisme</title>
 
-<!--h1 {
-    animation: apparition 5s ease-in-out;
+<style>
+/* STYLE GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@keyframes apparition {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}-->
-
-h1 {
-    animation: zoom 5s ease-in-out infinite alternate;
-
-    color:coral
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ANIMATIONS */
 @keyframes zoom {
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.2);
-    }
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
 }
 
-p {
-    animation:alternate 5s ease-in-out infinite alternate;
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #ff8c00, #ff6a00);
+    padding: 10px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
 
-        header {
-            background: linear-gradient(135deg, #ff7a00 0%, #ff9a00 100%);
-            color: white;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+.logo {
+    background: white;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-        }
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
+/* ACCUEIL */
+.hero {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
 
-        nav a:hover {
-            opacity: 0.8;
-        }
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: coral;
+    animation: zoom 3s ease-in-out infinite alternate;
+}
 
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-        }
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: white;
+    color: #667eea;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: white;
-            color: #667eea;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none;
-            cursor: pointer;
-        }
+/* CONTENEUR */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
+/* SERVICES */
+.services {
+    color: white;
+    padding: 80px 20px;
+    background: #571010;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+.services h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
 
-        .services {
-            
-            color: white;
-            padding: 80px 20px;
-            background: #571010;
-        }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
 
-        .services h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-            color: #fffbfb;
-        }
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
+.service-card:hover {
+    transform: translateY(-5px);
+}
 
-        .service-card {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
+.service-card h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
 
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
+.service-card p {
+    color: #666;
+    line-height: 1.8;
+}
 
-        .service-card h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 24px;
-        }
+/* GALERIE */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
 
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
-        }
+.gallery img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
 
-        .about {
-            padding: 80px 20px;
-        }
+.gallery img:hover {
+    transform: scale(1.04);
+}
 
-        .about h2 {
-            font-size: 36px;
-            margin-bottom: 30px;
-            color: #333;
-        }
+/* TARIFS */
+.tarifs {
+    padding: 60px 20px;
+    background: #f8f9fa;
+}
 
-        .about p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
+.tarifs h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
 
-        .contact-section {
-            padding: 80px 20px;
-            background: #f9f9f9;
-        }
+.tarifs-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
 
-        .contact-section h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-            color: #333;
-        }
+.tarifs-table {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 12px;
+    overflow-x: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
 
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 450px;
+}
 
-        .contact-info {
-            padding: 30px;
-            background: white;
-            border-radius: 8px;
-        }
+th, td {
+    padding: 15px;
+    text-align: center;
+}
 
-        .contact-info h3 {
-            color: #667eea;
-            margin-bottom: 20px;
-        }
+th {
+    background: #0f172a;
+    color: #fbbf24;
+}
 
-        .contact-info p {
-            margin-bottom: 15px;
-            color: #666;
-        }
+tr:nth-child(even) {
+    background: #fffbeb;
+}
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+.pack {
+    padding: 15px;
+    text-align: center;
+    background: #fef3c7;
+}
 
-        form input,
-        form textarea {
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 16px;
-        }
+/* A PROPOS */
+.about {
+    padding: 80px 20px;
+}
 
-        form textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
 
-        footer {
-            background: darkgreen;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
+.about p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
 
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 15px;
-            }
+/* CONTACT */
+.contact-section {
+    padding: 80px 20px;
+    background: #f9f9f9;
+}
 
-            .hero h1 {
-                font-size: 32px;
-            }
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
 
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info {
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+}
+
+.contact-info h3 {
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input,
+form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* FOOTER */
+footer {
+    background: darkgreen;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* LIGHTBOX */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    justify-content: center;
+    align-items: center;
+    padding: 50px 70px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox button {
+    position: absolute;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.close-lightbox {
+    top: 15px;
+    right: 25px;
+}
+
+.prev {
+    left: 15px;
+    top: 50%;
+}
+
+.next {
+    right: 15px;
+    top: 50%;
+}
+
+.image-counter {
+    position: absolute;
+    bottom: 15px;
+    color: white;
+    font-size: 15px;
+}
+
+/* TELEPHONE */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lightbox {
+        padding: 40px 35px;
+    }
+
+    .lightbox img {
+        max-width: 100%;
+        max-height: 75vh;
+    }
+}
+</style>
 </head>
+
 <body>
-   <header style="background: linear-gradient(90deg, #ff8c00, #ff6a00); padding: 10px 15px; position: sticky; top: 0; z-index: 100;">
-  <nav style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto;">
-    
-    <!-- LOGO CORRIGÉ -->
-    <div class="logo" style="background: white; width: 60px; height: 60px; min-width: 60px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-  <img src="ma-photo2.png" alt="Logo Wil Service" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.35);">
+
+<!-- HEADER -->
+<header>
+<nav>
+
+<div class="logo">
+<img src="ma-photo2.png" alt="Logo Wil Service">
 </div>
 
-    <!-- MENU CORRIGÉ TÉLÉPHONE -->
-    <ul style="display: flex; list-style: none; gap: 12px; margin: 0; padding: 0; flex-wrap: wrap; justify-content: flex-end; align-items: center;">
-      <li><a href="#accueil" style="color: white; text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap;">Accueil</a></li>
-      <li><a href="#services" style="color: white; text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap;">Services</a></li>
-      <li><a href="#apropos" style="color: white; text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap;">À Propos</a></li>
-      <li><a href="#contact" style="color: white; text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap;">Contact</a></li>
-    </ul>
+<ul>
+<li><a href="#accueil">Accueil</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#apropos">À Propos</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-  </nav>
+</nav>
 </header>
 
-    <section id="accueil" class="hero">
-        <h1>WIL SERVICE</h1>
-        <p>Votre partenaire en sérigraphie et graphisme. <br> Nous donnons également les cours à domicile en mathématiques 📈️ et physique de la classe de sixième en terminale toutes séries.</p>
-        <a href="#contact" class="btn">Nous Contacter</a>
-    </section>
+<!-- ACCUEIL -->
+<section id="accueil" class="hero">
 
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Nos Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>🎨 Sérigraphie</h3>
-                    <p>Impression de qualité supérieure sur tous types de textiles et matériaux. Nous réalisons vos projets avec précision et durabilité.</p>
+<h1>WIL SERVICE</h1>
 
-                    <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:10px; margin-top:15px;">
-  <a href="IMG_20260627_124543_060.jpg" target="_blank">
-      <img src="IMG_20260627_124543_060.jpg" alt="Sérigraphie 1" style="width:100%; height:120px; object-fit:cover; border-radius:8px;">
-      </a>
-   <a href="IMG_20260808_112045_741.jpg" target="_blank">
-       <img src="IMG_20260808_112045_741.jpg" alt="Sérigraphie 2" style="width:100%; height:120px; object-fit:cover; border-radius:8px;">
-   </a>
-   <a href="IMG_20260815_100314_142.jpg" target="_blank">
-       <img src="IMG_20260815_100314_142.jpg" alt="Sérigraphie 3" style="width:100%; height:120px; object-fit:cover; border-radius:8px;">
-   </a>
-  <a href="IMG_20260815_100554_199.jpg" target="_blank">
-      <img src="IMG_20260815_100554_199.jpg" alt="Sérigraphie 4" style="width:100%; height:120px; object-fit:cover; border-radius:8px;">
-  </a>
-  <a href="IMG_20260815_100555_653.jpg" target="_blank">
-      <img src="IMG_20260815_100555_653.jpg" alt="Sérigraphie 5" style="width:100%; height:120px; object-fit:cover; border-radius:8px;">
-  </a>
-   <a href="IMG_20260815_104809_2.jpg" target="_blank">
-       <img src="IMG_20260815_104809_2.jpg" alt="Sérigraphie 6" style="width:100%; height:120px; object-fit:cover; border-radius:8px;">
-   </a>
-   <a href="IMG_20260815_111817_986.jpg" target="_blank">
-       <img src="IMG_20260815_111817_986.jpg" alt="Sérigraphie 7" style="width:100%; height:120px; object-fit:cover; border-radius:8px;">
-   </a>
-  <a href="IMG_20260815_113814_999.jpg" target="_blank">
-      <img src="IMG_20260815_113814_999.jpg" alt="Sérigraphie 8" style="width:100%; height:120px; object-fit:cover; border-radius:8px;">
-  </a>
-  <a href="IMG_20260815_115009_323.jpg" target="_blank">
-      <img src="IMG_20260815_115009_323.jpg" alt="Sérigraphie 9" style="width:100%; height:120px; object-fit:cover; border-radius:8px;">
-  </a>
-  <a href="IMG_20260815_121224_827.jpg" target="_blank">
-      <img src="IMG_20260815_121224_827.jpg" alt="Sérigraphie 10" style="width:100%; height:120px; object-fit:cover; border-radius:8px;">
-  </a>
-  <a href="IMG_20260815_124055_943.jpg" target="_blank">
-      <img src="IMG_20260815_124055_943.jpg" alt="Sérigraphie 11" style="width:100%; height:120px; object-fit:cover; border-radius:8px;">
-  </a>
-</div>
-                </div>
+<p>
+Votre partenaire en sérigraphie et graphisme.
+<br>
+Nous donnons également des cours à domicile en mathématiques 📈 et physique,
+de la sixième à la terminale, toutes séries.
+</p>
 
-                <div class="service-card">
-                    <h3>✏️ Design Graphique</h3>
-                    <p>Création de logos, affiches publicitaires, brochures et identités visuelles. Nous donnons vie à vos idées.</p>
-                </div>
-                <div class="service-card">
-                    <h3>🖼️ Impression Personnalisée </h3>
-                    <p>Personnalisation de vêtements, accessoires et objets promotionnels à votre image.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<a href="#contact" class="btn">Nous Contacter</a>
 
-    <!-- TARIFS WIL SERVICE -->
-<section id="tarifs" style="padding:60px 20px; background:#f8f9fa;">
-  <h2 style="text-align:center; margin-bottom:10px;">Nos Tarifs 🥰️</h2>
-  <p style="text-align:center; color:#666; margin-bottom:30px;">Maths + Physique-Chimie - 2 séances / semaine à domicile</p>
-  
-  <div style="max-width:800px; margin:auto; background:white; border-radius:12px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-    <table style="width:100%; border-collapse:collapse;">
-      <tr style="background:#0f172a; color:#fbbf24;">
-        <th style="padding:15px; text-align:left;">Classe</th>
-        <th style="padding:15px; text-align:center;">Forfait Mois</th>
-        <th style="padding:15px; text-align:center;">Par Séance</th>
-      </tr>
-      <tr style="border-bottom:1px solid #eee;">
-        <td style="padding:12px 15px;"><b>6ème / 5ème</b></td>
-        <td style="padding:12px; text-align:center;">12.000 F</td>
-        <td style="padding:12px; text-align:center;">2.000 F</td>
-      </tr>
-      <tr style="border-bottom:1px solid #eee; background:#fffbeb;">
-        <td style="padding:12px 15px;"><b>4ème / 3ème</b></td>
-        <td style="padding:12px; text-align:center;"><b>15.000 F</b></td>
-        <td style="padding:12px; text-align:center;">2.500 F</td>
-      </tr>
-      <tr style="border-bottom:1px solid #eee;">
-        <td style="padding:12px 15px;"><b>2nde C / D</b></td>
-        <td style="padding:12px; text-align:center;">20.000 F</td>
-        <td style="padding:12px; text-align:center;">3.500 F</td>
-      </tr>
-      <tr style="border-bottom:1px solid #eee; background:#fffbeb;">
-        <td style="padding:12px 15px;"><b>1ère C / D</b></td>
-        <td style="padding:12px; text-align:center;"><b>25.000 F</b></td>
-        <td style="padding:12px; text-align:center;">4.500 F</td>
-      </tr>
-      <tr style="background:#0f172a; color:white;">
-        <td style="padding:15px;"><b>Terminale C / D</b> ⭐ Prépa Bac 💥️</td>
-        <td style="padding:15px; text-align:center;"><b style="color:#fbbf24; font-size:18px;">40.000 F</b></td>
-        <td style="padding:15px; text-align:center;">6.000 F</td>
-      </tr>
-    </table>
-    <div style="padding:15px; text-align:center; background:#fef3c7;">
-      <b>Pack Bac 2027 :</b> 100.000 F pour 4 mois intensifs (Février - Mai) 🔥
-    </div>
-  </div>
-  <p style="text-align:center; margin-top:20px;">
-    <a href="https://wa.me/2290159300508text=Bonjour%20WIL%20SERVICE%20je%20veux%20un%20répétiteur%20pour%20" style="background:#25D366; color:white; padding:12px 25px; border-radius:25px; text-decoration:none; font-weight:bold;">Réserver sur WhatsApp</a>
-  </p>
 </section>
 
-    <section id="apropos" class="about">
-        <div class="container">
-            <h2>À Propos de Nous</h2>
-            <p>WIL SERVICE est une entreprise spécialisée dans la sérigraphie et le graphisme depuis plusieurs années. Nous offrons des solutions créatives et professionnelles pour tous vos besoin[...]
-            <p>Notre équipe passionnée travaille avec dévouement pour transformer vos idées en réalisations exceptionnelles, en utilisant les meilleures techniques et matériaux disponibles.</p>
-        </div>
-    </section>
+<!-- SERVICES -->
+<section id="services" class="services">
 
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Nous Contacter</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Informations de Contact</h3>
-                    <p><strong>Adresse :</strong> Cotonou/Bénin</p>
-                    <p><strong>Téléphone :</strong> +2290159300508</p>
-                    <p><strong>Email :</strong> dossoumwilfried@gmail.com</p>
-                    <p><strong>Horaires :</strong> Lun - Ven : 9h - 19h</p>
-                </div>
+<div class="container">
 
-                <form>
-                    <input type="text" placeholder="Votre nom" required>
-                    <input type="email" placeholder="Votre email" required>
-                    <input type="text" placeholder="Sujet">
-                    <textarea placeholder="Votre message" required></textarea>
-                    <button type="submit" class="btn">Envoyer</button>
-                </form>
-            </div>
-        </div>
-    </section>
+<h2>Nos Services</h2>
 
-    <footer>
-        <p>&copy; WIL SERVICE - Sérigraphie et Graphisme. Tous droits réservés. <br> Votre satisfaction est notre priorité <br> Cotonou, Abomey-Calavi, <Porto-Novo></Porto-Novo> </p>
-    </footer>
+<div class="services-grid">
+
+<!-- SERIGRAPHIE -->
+<div class="service-card">
+
+<h3>🎨 Sérigraphie</h3>
+
+<p>
+Impression de qualité supérieure sur tous types de textiles et matériaux.
+Nous réalisons vos projets avec précision et durabilité.
+</p>
+
+<div class="gallery">
+
+<img src="IMG_20260627_124543_060.jpg" alt="Sérigraphie 1">
+
+<img src="IMG_20260808_112045_741.jpg" alt="Sérigraphie 2">
+
+<img src="IMG_20260815_100314_142.jpg" alt="Sérigraphie 3">
+
+<img src="IMG_20260815_100554_199.jpg" alt="Sérigraphie 4">
+
+<img src="IMG_20260815_100555_653.jpg" alt="Sérigraphie 5">
+
+<img src="IMG_20260815_104809_2.jpg" alt="Sérigraphie 6">
+
+<img src="IMG_20260815_111817_986.jpg" alt="Sérigraphie 7">
+
+<img src="IMG_20260815_113814_999.jpg" alt="Sérigraphie 8">
+
+<img src="IMG_20260815_115009_323.jpg" alt="Sérigraphie 9">
+
+<img src="IMG_20260815_121224_827.jpg" alt="Sérigraphie 10">
+
+<img src="IMG_20260815_124055_943.jpg" alt="Sérigraphie 11">
+
+</div>
+</div>
+
+<!-- DESIGN -->
+<div class="service-card">
+
+<h3>✏️ Design Graphique</h3>
+
+<p>
+Création de logos, affiches publicitaires, brochures
+et identités visuelles.
+Nous donnons vie à vos idées.
+</p>
+
+</div>
+
+<!-- IMPRESSION -->
+<div class="service-card">
+
+<h3>🖼️ Impression Personnalisée</h3>
+
+<p>
+Personnalisation de vêtements, accessoires et objets
+promotionnels à votre image.
+</p>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- TARIFS -->
+<section id="tarifs" class="tarifs">
+
+<h2>Nos Tarifs 🥰</h2>
+
+<p class="tarifs-description">
+Maths + Physique-Chimie - 2 séances / semaine à domicile
+</p>
+
+<div class="tarifs-table">
+
+<table>
+
+<tr>
+<th>Classe</th>
+<th>Forfait Mois</th>
+<th>Par Séance</th>
+</tr>
+
+<tr>
+<td><b>6ème / 5ème</b></td>
+<td>12.000 F</td>
+<td>2.000 F</td>
+</tr>
+
+<tr>
+<td><b>4ème / 3ème</b></td>
+<td>15.000 F</td>
+<td>2.500 F</td>
+</tr>
+
+<tr>
+<td><b>2nde C / D</b></td>
+<td>20.000 F</td>
+<td>3.500 F</td>
+</tr>
+
+<tr>
+<td><b>1ère C / D</b></td>
+<td>25.000 F</td>
+<td>4.500 F</td>
+</tr>
+
+<tr style="background:#0f172a;color:white;">
+
+<td><b>Terminale C / D ⭐</b></td>
+
+<td style="color:#fbbf24;">
+<b>40.000 F</b>
+</td>
+
+<td>6.000 F</td>
+
+</tr>
+
+</table>
+
+<div class="pack">
+<b>Pack Bac 2027 :</b>
+100.000 F pour 4 mois intensifs
+(Février - Mai) 🔥
+</div>
+
+</div>
+
+<p style="text-align:center;margin-top:25px;">
+
+<a href="https://wa.me/2290159300508?text=Bonjour%20WIL%20SERVICE%2C%20je%20veux%20un%20r%C3%A9p%C3%A9titeur."
+style="background:#25D366;color:white;padding:12px 25px;border-radius:25px;text-decoration:none;font-weight:bold;">
+
+Réserver sur WhatsApp
+
+</a>
+
+</p>
+</section>
+
+<!-- A PROPOS -->
+<section id="apropos" class="about">
+
+<div class="container">
+
+<h2>À Propos de Nous</h2>
+
+<p>
+WIL SERVICE est une entreprise spécialisée dans la sérigraphie
+et le graphisme. Nous proposons également des cours particuliers
+en mathématiques et physique-chimie.
+</p>
+
+<p>
+Notre objectif est de fournir des prestations de qualité,
+en mettant notre créativité, notre savoir-faire et notre
+dévouement au service de nos clients.
+</p>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+
+<div class="container">
+
+<h2>Nous Contacter</h2>
+
+<div class="contact-content">
+
+<div class="contact-info">
+
+<h3>Informations de Contact</h3>
+
+<p><strong>Adresse :</strong> Cotonou / Bénin</p>
+
+<p><strong>Téléphone :</strong> +2290159300508</p>
+
+<p><strong>Email :</strong> dossoumwilfried@gmail.com</p>
+
+<p><strong>Horaires :</strong> Lun - Ven : 9h - 19h</p>
+
+</div>
+
+<form onsubmit="envoyerWhatsApp(event)">
+
+<input type="text" id="nom" placeholder="Votre nom" required>
+
+<input type="email" id="email" placeholder="Votre email" required>
+
+<input type="text" id="sujet" placeholder="Sujet">
+
+<textarea id="message" placeholder="Votre message" required></textarea>
+
+<button type="submit" class="btn">
+Envoyer
+</button>
+
+</form>
+
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+<p>
+&copy; WIL SERVICE - Sérigraphie et Graphisme.
+Tous droits réservés.
+<br>
+Votre satisfaction est notre priorité.
+<br>
+Cotonou - Abomey-Calavi - Porto-Novo
+</p>
+
+</footer>
+
+<!-- FENETRE LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+
+<button class="close-lightbox" onclick="fermerLightbox()" aria-label="Fermer">×</button>
+
+<button class="prev" onclick="changerImage(-1)" aria-label="Image précédente">❮</button>
+
+<img id="lightbox-image" src="" alt="Image agrandie">
+
+<button class="next" onclick="changerImage(1)" aria-label="Image suivante">❯</button>
+
+<div class="image-counter" id="image-counter"></div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+
+/* GALERIE AUTOMATIQUE */
+
+const images = Array.from(
+    document.querySelectorAll('.gallery img')
+);
+
+const lightbox = document.getElementById('lightbox');
+
+const grandeImage = document.getElementById('lightbox-image');
+
+const compteur = document.getElementById('image-counter');
+
+let imageActuelle = 0;
+
+/* OUVRIR UNE IMAGE */
+
+images.forEach((image, index) => {
+
+    image.addEventListener('click', () => {
+
+        imageActuelle = index;
+
+        afficherImage();
+
+        lightbox.classList.add('active');
+
+        document.body.style.overflow = 'hidden';
+
+    });
+
+});
+
+/* AFFICHER L'IMAGE */
+
+function afficherImage() {
+
+    grandeImage.src = images[imageActuelle].src;
+
+    grandeImage.alt = images[imageActuelle].alt;
+
+    compteur.textContent =
+        (imageActuelle + 1) + " / " + images.length;
+
+}
+
+/* IMAGE SUIVANTE OU PRECEDENTE */
+
+function changerImage(direction) {
+
+    imageActuelle += direction;
+
+    if (imageActuelle >= images.length) {
+        imageActuelle = 0;
+    }
+
+    if (imageActuelle < 0) {
+        imageActuelle = images.length - 1;
+    }
+
+    afficherImage();
+
+}
+
+/* FERMER LA GALERIE */
+
+function fermerLightbox() {
+
+    lightbox.classList.remove('active');
+
+    document.body.style.overflow = '';
+
+}
+
+/* CLIC SUR LE FOND */
+
+lightbox.addEventListener('click', (event) => {
+
+    if (event.target === lightbox) {
+        fermerLightbox();
+    }
+
+});
+
+/* NAVIGATION AU CLAVIER */
+
+document.addEventListener('keydown', (event) => {
+
+    if (!lightbox.classList.contains('active')) return;
+
+    if (event.key === 'Escape') {
+        fermerLightbox();
+    }
+
+    if (event.key === 'ArrowRight') {
+        changerImage(1);
+    }
+
+    if (event.key === 'ArrowLeft') {
+        changerImage(-1);
+    }
+
+});
+
+/* FORMULAIRE WHATSAPP */
+
+function envoyerWhatsApp(event) {
+
+    event.preventDefault();
+
+    const nom = document.getElementById('nom').value;
+
+    const email = document.getElementById('email').value;
+
+    const sujet = document.getElementById('sujet').value;
+
+    const message = document.getElementById('message').value;
+
+    const texte =
+        "Bonjour WIL SERVICE !\n\n" +
+        "Nom : " + nom + "\n" +
+        "Email : " + email + "\n" +
+        "Sujet : " + sujet + "\n" +
+        "Message : " + message;
+
+    const numero = "2290159300508";
+
+    const url =
+        "https://wa.me/" + numero +
+        "?text=" + encodeURIComponent(texte);
+
+    window.open(url, "_blank");
+
+}
+
+</script>
+
 </body>
 </html>
